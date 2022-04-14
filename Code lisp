@@ -1,0 +1,304 @@
+(eval
+  (cons 
+    (quote loop) 
+    (cons 
+      (cons 
+        (quote cond) 
+        (cons 
+          (cons 
+            (cons (quote not) (cons (quote bassine) nil)) 
+            (cons 
+              (cons (quote return) (cons (quote bassine) nil)) nil ) ) nil ) ) 
+      (cons (cons (quote pop) (cons (quote bassine) nil)) nil) ) ) )
+
+
+      (defun F
+        (L)
+        (cond
+          ((atom L)nil)
+          ((cons 
+            (car L)
+            (F(cdr L)) ) ) ) )
+
+
+(eval
+  (cons 
+    (quote loop) 
+    (cons 
+      (cons 
+        (quote cond) 
+        (cons 
+          (cons 
+            (cons (quote not) (cons (quote bassine) nil)) 
+            (cons 
+              (cons (quote return) (cons (quote bassine) nil)) nil ) ) nil ) ) 
+      (cons (cons (quote pop) (cons (quote bassine) nil)) nil) ) ) )
+
+
+(loop 
+  (cond 
+    ((not bassine) (return seau))
+    ((push (pop bassine) seau)) ) )
+
+(defun garde-o (liste)
+  (setq finliste nil)
+    (loop 
+      (cond
+        ((not liste) (return finliste))
+        ((equal (car liste) 'o) (push (pop liste) finliste))
+        ((pop liste)) ) ) )
+
+
+(defun garde (elemenliste liste)
+  (setq finliste nil)
+    (loop 
+      (cond
+        ((not liste) (return finliste))
+        ((equal (car liste) elemenliste) (push (pop liste) finliste))
+        ((pop liste)) ) ) )
+
+
+(defun inverse (bassine)
+  (setq seau nil)
+    (loop
+      (cond 
+        ((not bassine) (return seau))
+        ((push (pop bassine) seau)) ) ) )
+
+(eval
+  (cons 
+    (quote loop) 
+    (cons 
+      (cons 
+        (quote cond) 
+        (cons 
+          (cons 
+            (cons (quote not) 
+              (cons (quote bassine) nil) ) 
+            (cons 
+              (cons (quote return) 
+                (cons (quote bassine) nil) ) nil ) ) nil ) ) 
+                (cons (cons (quote pop) (cons (quote bassine) nil)) nil) ) ) )
+
+
+((lambda (liste compteur)
+  (loop
+    (cond ((not liste) (return compteur)))
+    (pop liste)
+    (incf compteur) ) )
+    seau 
+    0 )
+
+
+    (abc
+      (de fg he il)
+      (xyzdq
+        bde
+        (a b c)
+        dde
+        (aaaa
+        xxx
+        ((zzz . y)) )
+      xxxx )
+    ((toto) x) )
+
+    (defun compte (liste &aux compteur sous-liste)
+      (setq compteur 0)
+      (loop(cond ((not liste) (return compteur)))
+      (setq sous-liste (pop liste))
+      (loop
+        (cond ((not sous-liste) (return)))
+        (pop sous-liste)
+        (incf compteur) ) ) )
+
+
+(eval
+  (cons
+    (quote loop)
+    (cons
+      (cons
+        (quote cond)
+        (cons
+          (cons
+            (cons (quote not) (cons (quote bassine) nil))
+            (cons
+              (cons
+                (quote return)
+                (cons (quote bassine) nil) )
+              nil ) ) 
+          nil ) )
+      (cons 
+        (cons 
+          (quote pop) 
+          (cons (quote bassine) nil) )
+        nil ) ) ) )
+
+(eval
+  (cons
+    (quote loop)
+    (cons
+      (cons
+        (quote cond)
+        (cons
+          (cons
+            (cons (quote not) (cons (quote bassine) nil))
+            (cons
+              (cons (quote return)
+              (cons (quote bassine) nil) )
+              nil ) ) 
+          nil ) )
+      (cons 
+        (cons 
+          (quote pop) 
+          (cons (quote bassine) nil) )
+        nil ) ) ) )
+
+
+(defun garde-o (liste)
+  (cond
+    ((not liste) nil)
+    ((equal (car liste) 'o)
+      (cons 'o (garde-o (cdr liste))) )
+    (t (garde-o (cdr liste))) ) )
+
+
+
+(defun garde (x liste)
+  (cond
+    ((not liste) nil)
+    ((equal (car liste) x)
+      (cons x (garde x (cdr liste))) )
+    (t (garde x (cdr liste))) ) )
+
+(defun jette-o (liste)
+  (cond
+    ((not liste) nil)
+    ((equal (car liste) 'o)
+      (jette-o (cdr liste)) )
+    (t (cons (car liste) (jette-o (cdr liste)))) ) )
+
+(defun jette (x liste)
+  (cond
+    ((not liste) nil)
+    ((equal (car liste) x)
+      (jette x (cdr liste)) )
+    (t (cons (car liste) (jette x (cdr liste)))) ) )
+
+(defun superieur (x liste)
+  (cond
+    ((not liste) 0)
+    ((>= (car liste) x)
+      (+ 1 (superieur x (cdr liste))) )
+    (t (superieur x (cdr liste)))))
+
+
+(defun superieur (x liste)
+  (cond
+    ((not liste) nil)
+    (( < (car liste) x)
+      (superieur x (cdr liste)) )
+    (t (cons (car liste) (superieur x (cdr liste)))) ) )
+
+(defun superieur (x liste)
+  (cond
+    ((not liste) nil)
+    (( >= (car liste) x)
+      (cons x (superieur x (cdr liste))) )
+    (t (superieur x (cdr liste))) ) )
+
+
+(defun garde-o (liste)
+  (setq finliste nil)
+  (loop
+    (cond
+      ((not liste) (return finliste))
+      ((equal (car liste) 'o) (push (pop liste) finliste))
+      ((pop liste)) ) ) )
+
+
+
+(defun garde-o (liste &aux finliste)
+  (setq finliste nil)
+  (loop 
+    (cond
+      ((not liste) (return finliste))
+      ((equal (car liste) 'o) (push (pop liste) finliste))
+      ((pop liste)) ) ) )
+
+(defun garde (elemenliste liste &aux finliste)
+  (setq finliste nil)
+  (loop 
+    (cond
+      ((not liste) (return finliste))
+      ((equal (car liste) elemenliste) (push (pop liste) finliste))
+      ((pop liste)) ) ) )
+
+
+(defun inverse (bassine &aux seau)
+  (setq seau nil)
+  (loop
+    (cond 
+      ((not bassine) (return seau))
+      ((push (pop bassine) seau)) ) ) )
+
+(defun garde-o (liste &aux finliste)
+  (loop 
+    (cond
+      ((not liste) (return finliste))
+      ((equal (car liste) 'o) (push (pop liste) finliste))
+      ((pop liste)) ) ) )
+
+
+(defun nombre (liste)
+  (cond 
+    ((not liste) nil)
+    ((and (listp (car liste)) (numberp (car (car liste))))
+      (cons (car liste) (nombre (cdr liste))) )
+    ((nombre (cdr liste))) ) )
+
+(defun nombre (liste)
+  (cond 
+    ((not liste) 0)
+    ((and (listp (car liste)) (numberp (car (car liste))))
+      (+ 1 (car liste) (nombre (cdr liste))) )
+    ((nombre (cdr liste))) ) )
+
+  
+(garde 'p '(art nez pied nez prendre silence nu)) => (pied prendre) 
+
+(defun garde (x liste)
+  (cond
+    ((atom liste) nil)
+    ((equal
+        (char (string (car liste)) 0)
+        (char (string x) 0) )
+      (cons (car liste) (garde x (cdr liste))) )
+    (t (garde x (cdr liste))) ) )
+
+(defun begin (x liste)
+  (cond 
+    ((atom liste) 0)
+    ((equal
+        (char (string (car liste)) 0)
+        (char (string x) 0) )
+      (1+ (begin x (cdr liste))) )
+    (t (begin x (cdr liste))) ) )
+
+(1 (c . e) b (d a (f)) j ((h i) g))
+
+(1 Y b X j O)
+
+Y= (c.e)
+X (d a P)
+P = (f)
+O = (Q g)
+Q = (h i)
+
+((a (G)) B (0 1 . 2) d (f (a b)) c) 
+(VOR B (0 1 . 2) d POR c)
+
+VOR = (a XOR)
+XOR = (G)
+POR = (f TOR)
+TOR = (a b)
+
